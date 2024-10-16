@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap");
+@font-face {
+  font-family: UNCAGE-Bold;
+  src: url("/fonts/otf/UNCAGE-Bold.otf") format("opentype");
+}
+@font-face {
+  font-family: UNCAGE;
+  src: url("/fonts/otf/UNCAGE-SemiBold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: Absans-Regular;
+  src: url("/fonts/otf/Absans-Regular.otf") format("opentype");
+}
+.fjalla-one-regular {
+  font-family: "Fjalla One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.UNCAGE {
+  font-family: UNCAGE;
+}
+.UNCAGE-Bold {
+  font-family: UNCAGE-Bold;
+}
+.Absans-Regular {
+  font-family: Absans-Regular;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.relative .carousel-indicators {
+  bottom: 30px;
+  z-index: 2;
+}
+.carousel-item {
+  transition: transform 3s ease-in-out !important;
+}
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+  --company-blue: #0088cc;
+}
+body,
+html {
+  width: 100%;
+  height: 100vh;
+}
+
+.blog-post-shadow {
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+}
+.truncate-3-lines {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+@keyframes zoom {
+  0% {
+    object-fit: ;
+  }
+}
+.transform {
+  transition: transform 1s ease;
+}
+.logo-blue-color {
+  background: var(--company-blue);
+}
+
+.sidebar-contact {
+  top: 50%;
+  transform: translateY(-50%);
+}
+.sidebar-contact-shadow {
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+.search-bar:active {
+  position: relative;
+  width: 100%;
+  top: 2px;
+}
+.search-bar:hover {
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+.btn-pricing:active {
+  position: relative;
+  top: 2px;
+}
+.shadow-main-categories {
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px,
+    rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
+}
+@keyframes backgroundMove {
+  0% {
+    background-position: center;
+  }
+  50% {
+    background-position: center 5px;
+  }
+  100% {
+    background-position: center;
+  }
+}
+
+.animate-background-move {
+  animation: backgroundMove 10s ease-in-out infinite;
+}
+
+#header .nav-link {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  text-decoration: none;
+  --tw-text-opacity: 1;
+  color: rgb(107, 114, 128);
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: 300;
+}
+.text-about {
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.text-about:hover {
+  transform: scale(1.03);
+}
+.text-about-container {
+  padding: 1.5rem;
+}
+.text-grid-container {
+  gap: 0;
+}

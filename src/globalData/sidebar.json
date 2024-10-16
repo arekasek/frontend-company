@@ -1,0 +1,65 @@
+{
+  "menuItems": [
+    {
+      "icon": {
+        "id": "670520dd2b088adb7d83cb10",
+        "alt": "Facebook-contact",
+        "filename": "facebook-app-round-white-icon.png",
+        "mimeType": "image/png",
+        "filesize": 3716,
+        "width": 512,
+        "height": 512,
+        "focalX": 50,
+        "focalY": 50,
+        "createdAt": "2024-10-08T12:09:02.003Z",
+        "updatedAt": "2024-10-08T12:09:02.003Z",
+        "url": "https://company-website-1d69.onrender.com/media/facebook-app-round-white-icon.png"
+      },
+      "link": "https://www.facebook.com/p/Woj-P%C5%82ot-Ogrodzenia-Balustrady-Kowalstwo-100057877560719/?paipv=0&eav=AfZ1bVt-69_LozsPf2maSvfgsAErDl70Y_2lRsBQZwsG9LVEYgMNVlSa9c1k6vHO7SY&_rdr",
+      "text": "Facebook",
+      "id": "670520bd793046d8cf5a8b9f"
+    },
+    {
+      "icon": {
+        "id": "67052581f3352170908b397d",
+        "alt": "email-contact",
+        "filename": "523-5238950_email-icon-email-icon-round-white-png-transparent.png",
+        "mimeType": "image/png",
+        "filesize": 53139,
+        "width": 940,
+        "height": 940,
+        "focalX": 50,
+        "focalY": 50,
+        "createdAt": "2024-10-08T12:28:49.247Z",
+        "updatedAt": "2024-10-08T12:28:49.247Z",
+        "url": "https://company-website-1d69.onrender.com/media/523-5238950_email-icon-email-icon-round-white-png-transparent.png"
+      },
+      "link": "mailto:wojplot@wp.pl",
+      "text": "Email",
+      "id": "6705256f6daade78cb2c474b"
+    },
+    {
+      "icon": {
+        "id": "6705547158a8a20f98e6fd00",
+        "alt": "phone",
+        "filename": "5a452601546ddca7e1fcbc87.png",
+        "mimeType": "image/png",
+        "filesize": 19284,
+        "width": 512,
+        "height": 512,
+        "focalX": 50,
+        "focalY": 50,
+        "createdAt": "2024-10-08T15:49:05.690Z",
+        "updatedAt": "2024-10-08T15:49:05.690Z",
+        "url": "https://company-website-1d69.onrender.com/media/5a452601546ddca7e1fcbc87.png"
+      },
+      "link": "#",
+      "text": "phone-number",
+      "id": "670553c7f56b2a14523e10c3"
+    }
+  ],
+  "globalType": "sidebar",
+  "createdAt": "2024-10-08T12:09:03.905Z",
+  "updatedAt": "2024-10-08T15:52:29.095Z",
+  "id": "670520df2b088adb7d83cb18"
+}

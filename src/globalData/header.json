@@ -1,0 +1,38 @@
+{
+  "navLinks": [
+    {
+      "label": "Oferta",
+      "link": "#O-FIRMA",
+      "id": "66fd5dc7687759b36f32d415"
+    },
+    {
+      "label": "Galeria",
+      "link": "Galeria",
+      "id": "66fd5dfb687759b36f32d41a"
+    },
+    {
+      "label": "Realizacje",
+      "link": "Realizacje",
+      "id": "66fd5dd2687759b36f32d416"
+    },
+    {
+      "label": "O firmie",
+      "link": "O firmie",
+      "id": "66fd5ddb687759b36f32d417"
+    },
+    {
+      "label": "Kontakt",
+      "link": "Kontakt",
+      "id": "66fd5de3687759b36f32d418"
+    },
+    {
+      "label": "Współpraca",
+      "link": "Współpraca",
+      "id": "66fd5dee687759b36f32d419"
+    }
+  ],
+  "globalType": "header",
+  "createdAt": "2024-10-02T14:52:04.432Z",
+  "updatedAt": "2024-10-09T18:39:59.192Z",
+  "id": "66fd5e14a7a1de0e27c1008b"
+}
