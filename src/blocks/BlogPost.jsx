@@ -37,7 +37,7 @@ const TwoColumn = ({ heading, text, images, direction }) => {
   }, []);
 
   return (
-    <div className="relative flex items-center justify-center w-full h-[90vh] -z-0">
+    <div className="relative flex items-center justify-center w-full min-h-[90vh] max-h-[90vh] -z-0 bg-gray-500">
       <Carousel
         controls={false}
         indicators={true}
@@ -46,7 +46,10 @@ const TwoColumn = ({ heading, text, images, direction }) => {
         slides={direction === "left" ? 2 : 1}
       >
         {images.map((item, index) => (
-          <Carousel.Item key={index} className="relative w-full h-[90vh]">
+          <Carousel.Item
+            key={index}
+            className="relative w-full min-h-[90vh] max-h-[90vh]"
+          >
             <div
               className="absolute top-0 left-0 w-[100vw] h-full bg-cover bg-center z-0 filter brightness-50 contrast-50 saturate-50 bg-opacity-40"
               style={{ backgroundImage: `url(${item.image.url})` }}

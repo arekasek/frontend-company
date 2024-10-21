@@ -17,7 +17,7 @@ const Page = ({ page }) => {
 export const getStaticPaths = async () => {
   try {
     const pageReq = await axios.get(
-      "https://company-website-1d69.onrender.com/api/pages?limit=100"
+      "http://localhost:4000/api/pages?limit=100"
     );
     const pageData = pageReq.data;
 
@@ -41,7 +41,7 @@ export const getStaticProps = async (ctx) => {
 
   try {
     const pageReq = await axios.get(
-      `https://company-website-1d69.onrender.com/api/pages?where[slug][equals]=${slug}`
+      `http://localhost:4000/api/pages?where[slug][equals]=${slug}`
     );
     const pageData = pageReq.data.docs[0];
 

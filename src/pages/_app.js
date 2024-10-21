@@ -16,7 +16,7 @@ export default function App({ Component, pageProps }) {
     <>
       <Header />
       <div className="flex h-auto">
-        <div className="flex-1 bg-gray-500 w-full">
+        <div className="flex-1 bg-gray-200 w-full">
           <Component {...pageProps} />
         </div>
       </div>

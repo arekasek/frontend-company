@@ -1,80 +1,51 @@
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
+import { gsap } from "gsap";
 
 const Show = ({ image, images }) => {
-  return (
-    <div className="grid grid-cols-5 grid-rows-3 gap-4 w-full h-[90vh]">
-      {/* Główny obrazek */}
-      <div
-        className="col-span-2 row-span-2"
-        style={{
-          backgroundImage: `url(${image.url})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      ></div>
+  const [activeImage, setActiveImage] = useState(image);
+  const imageRef = useRef(null);
 
-      {/* Uzupełnienie pozostałych divów z obrazami */}
-      <div className="row-span-2 col-start-3">
-        {images[0] && (
-          <div
-            className="h-full w-full"
-            style={{
-              backgroundImage: `url(${images[0].image.url})`, // Użyj images[0].image.url
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-            }}
-          ></div>
-        )}
+  useEffect(() => {
+    if (imageRef.current) {
+      gsap.fromTo(
+        imageRef.current,
+        { opacity: 0 },
+        { opacity: 1, duration: 0.5, ease: "power3.out" }
+      );
+    }
+  }, [activeImage]);
+
+  return (
+    <>
+      <div className="w-full h-[90dvh] flex flex-col sm:flex-row p-12 gap-4">
+        <div
+          ref={imageRef}
+          className="h-full sm:w-[50%] w-full sm:rounded-l-xl rounded-xl blog-post-shadow"
+          style={{
+            backgroundImage: `url(${activeImage.url})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        ></div>
+
+        <div className="h-full sm:w-[50%] w-full flex flex-col justify-center">
+          <div className="grid grid-cols-3 grid-rows-3 gap-4 w-full h-full">
+            {images.map((item) => (
+              <div
+                key={item.id}
+                className="cursor-pointer h-full w-full blog-post-shadow hover:scale-105 transition-all duration-300 "
+                style={{
+                  backgroundImage: `url(${item.image.url})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                }}
+                onClick={() => setActiveImage(item.image)}
+              ></div>
+            ))}
+          </div>
+        </div>
       </div>
-      <div className="row-span-2 col-start-4">
-        {images[1] && (
-          <div
-            className="h-full w-full"
-            style={{
-              backgroundImage: `url(${images[1].image.url})`, // Użyj images[1].image.url
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-            }}
-          ></div>
-        )}
-      </div>
-      <div className="row-span-4 col-start-5">
-        {images[2] && (
-          <div
-            className="h-full w-full"
-            style={{
-              backgroundImage: `url(${images[2].image.url})`, // Użyj images[2].image.url
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-            }}
-          ></div>
-        )}
-      </div>
-      <div className="row-span-2 row-start-3">
-        {images[3] && (
-          <div
-            className="h-full w-full"
-            style={{
-              backgroundImage: `url(${images[3].image.url})`, // Użyj images[3].image.url
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-            }}
-          ></div>
-        )}
-      </div>
-      <div className="col-span-3 row-span-2 row-start-3">
-        {images[4] && (
-          <div
-            className="h-full w-full"
-            style={{
-              backgroundImage: `url(${images[4].image.url})`, // Użyj images[4].image.url
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-            }}
-          ></div>
-        )}
-      </div>
-    </div>
+    </>
   );
 };
 
