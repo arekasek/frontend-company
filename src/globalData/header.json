@@ -17,12 +17,12 @@
     },
     {
       "label": "O firmie",
-      "link": "O firmie",
+      "link": "#text-firma-cont",
       "id": "66fd5ddb687759b36f32d417"
     },
     {
       "label": "Kontakt",
-      "link": "Kontakt",
+      "link": "#Kontakt",
       "id": "66fd5de3687759b36f32d418"
     },
     {
@@ -33,6 +33,6 @@
   ],
   "globalType": "header",
   "createdAt": "2024-10-02T14:52:04.432Z",
-  "updatedAt": "2024-10-09T18:39:59.192Z",
+  "updatedAt": "2024-10-22T18:33:32.144Z",
   "id": "66fd5e14a7a1de0e27c1008b"
 }
