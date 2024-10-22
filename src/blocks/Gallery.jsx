@@ -59,7 +59,7 @@ const Gallery = ({
 
   return (
     <div className="min-h-[100dvh] w-full bg-gray-200 flex items-center justify-center p-8 sm:p-16 gallery-container">
-      <div className="flex sm:flex-row flex-col items-stretch justify-center text-white font-normal text-xl w-full gap-4 h-full">
+      <div className="flex md:flex-row flex-col items-stretch justify-center text-white font-normal text-xl w-full gap-4 h-full">
         <div className="relative">
           {direction === "left" && (
             <div
@@ -68,7 +68,7 @@ const Gallery = ({
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }}
-              className="sm:h-[80vh] h-[30vh] sm:w-[25vw] w-full flex-grow flex justify-center items-center text-justify filter brightness-50 contrast-50 saturate-50 shadow-main-categories"
+              className="md:h-[80vh] h-[30vh] md:w-[25vw] w-full flex-grow flex justify-center items-center text-justify filter brightness-50 contrast-50 saturate-50 shadow-main-categories"
             >
               <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black opacity-80"></div>
             </div>
@@ -77,14 +77,14 @@ const Gallery = ({
             {heading}
           </h1>
         </div>
-        <div className="h-[80vh] sm:w-[75vw] w-full flex sm:flex-row flex-col gap-4">
+        <div className="h-[80vh] md:w-[75vw] w-full flex md:flex-row flex-col gap-4">
           {images.map((item, index) => (
             <div
               key={index}
               onMouseEnter={() => setActiveIndex(index)}
               onMouseLeave={() => setActiveIndex(null)}
               className={`gallery-image flex justify-center items-center text-justify h-full transition-all duration-700 ease-in-out shadow-main-categories ${
-                activeIndex === index ? "w-full flex-grow" : "sm:w-1/3"
+                activeIndex === index ? "w-full flex-grow" : "md:w-1/3"
               }`}
               style={{
                 backgroundImage: `url(${item.image.url})`,

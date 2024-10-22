@@ -50,7 +50,7 @@ const PauseBlock = ({ texts, image }) => {
   return (
     <div
       id="text-firma-cont"
-      className="relative flex items-stretch justify-center w-full h-fit -z-0 text-white Absans-Regular font-medium flex-col-reverse xl:flex-row bg-gradient-to-r from-[#969696ab] via-[#646464b4] to-[#5a5a5a00]"
+      className="relative flex items-stretch justify-center w-full h-fit -z-0 text-white Absans-Regular font-medium flex-col-reverse xl:flex-row bg-[#555555]"
     >
       <div className="xl:w-[50%] w-[100%] sm:p-12 text-about-container flex-grow">
         <div className="grid grid-cols-1 sm:grid-cols-2 sm:gap-4 h-full text-grid-container">
@@ -58,7 +58,7 @@ const PauseBlock = ({ texts, image }) => {
             <li
               id="text-firma"
               key={index}
-              className={`sm:text-lg text-base xl:flex-row flex flex-col items-center gap-4 mb-6 transform transition-transform hover:scale-105 duration-300`}
+              className={`sm:text-lg text-medium xl:flex-row flex flex-col items-center gap-4 mb-6 transform transition-transform hover:scale-105 duration-300`}
             >
               <div
                 className="w-[40px] h-[40px] flex-shrink-0 bg-contain bg-center bg-no-repeat"
@@ -66,7 +66,9 @@ const PauseBlock = ({ texts, image }) => {
                   backgroundImage: `url(/image.png)`,
                 }}
               ></div>
-              <span className="text-about 2xl:text-left">{item.text}</span>
+              <span className="text-about text-base 2xl:text-left">
+                {item.text}
+              </span>
             </li>
           ))}
         </div>

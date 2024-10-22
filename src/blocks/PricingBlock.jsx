@@ -22,7 +22,7 @@ const PricingBlock = ({ pricingItems }) => {
         scrollTrigger: {
           trigger: "#O-FIRMA",
           start: "top 100%",
-          end: "bottom 60%",
+          end: "bottom 80%",
           scrub: true,
         },
       }

@@ -62,16 +62,16 @@ const TwoColumn = ({ heading, text, images, direction }) => {
       </Carousel>
 
       <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center UNCAGE-Bold">
-        <div className="sm:w-[50vw] w-[80vw] text-center h-fit text-white flex flex-col items-center gap-3">
+        <div className="md:w-[50vw] w-[80vw] text-center h-fit text-white flex flex-col items-center gap-3">
           <h1
             id="heading-main"
-            className="xl:text-7xl font-extrabold lg:text-5xl md:text-2xl text-[7vw]"
+            className="xl:text-7xl font-extrabold lg:text-5xl text-3xl"
           >
             {heading}
           </h1>
           <p
             id="text-main"
-            className="sm:text-xl text-sm sm:w-3/5 w-full Absans-Regular font-medium"
+            className="lg:text-xl text-sm sm:w-3/5 w-full Absans-Regular"
           >
             {text}
           </p>
