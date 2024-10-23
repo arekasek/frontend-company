@@ -58,7 +58,10 @@ const Gallery = ({
   }, []);
 
   return (
-    <div className="min-h-[100dvh] w-full bg-gray-200 flex items-center justify-center p-8 sm:p-16 gallery-container">
+    <div
+      className="min-h-[100dvh] w-full bg-gray-200 flex items-center justify-center p-8 sm:p-16 gallery-container"
+      id="Realizacje"
+    >
       <div className="flex md:flex-row flex-col items-stretch justify-center text-white font-normal text-xl w-full gap-4 h-full">
         <div className="relative">
           {direction === "left" && (

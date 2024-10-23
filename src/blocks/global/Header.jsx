@@ -28,7 +28,7 @@ export default function Header() {
 
   return (
     <Headroom id="header">
-      <div className="w-full min-h-[10vh] max-h-[10vh] sticky bg-gray-100 z-10 p-5 text-center flex justify-between md:justify-evenly items-center shadow-md top-0">
+      <div className="w-full min-h-[10vh] max-h-[10vh] sticky bg-gray-100 z-50 p-5 text-center flex justify-between md:justify-evenly items-center shadow-md top-0">
         <div className="flex h-10 w-20">
           {header.logo && (
             <img

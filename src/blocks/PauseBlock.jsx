@@ -66,7 +66,7 @@ const PauseBlock = ({ texts, image }) => {
                   backgroundImage: `url(/image.png)`,
                 }}
               ></div>
-              <span className="text-about text-base 2xl:text-left">
+              <span className="text-about sm:text-lg text-base 2xl:text-left">
                 {item.text}
               </span>
             </li>
