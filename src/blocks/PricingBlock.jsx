@@ -20,7 +20,7 @@ const PricingBlock = ({ pricingItems }) => {
         stagger: 0.3,
         ease: "power3.out",
         scrollTrigger: {
-          trigger: "#O-FIRMA",
+          trigger: "#OFERTA",
           start: "top 100%",
           end: "bottom 80%",
           scrub: true,
@@ -33,7 +33,7 @@ const PricingBlock = ({ pricingItems }) => {
     <div className="sm:h-screen h-fit w-full bg-gray-200 flex items-center justify-center">
       <div
         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 w-full h-full p-8 sm:p-16 gap-8 sm:auto-rows-fr"
-        id="O-FIRMA"
+        id="OFERTA"
       >
         {pricingItems.map((item, index) => (
           <div

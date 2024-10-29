@@ -1,15 +1,18 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { Carousel } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import gsap from "gsap";
-import { useEffect } from "react";
+import PropTypes from "prop-types";
+
 const TwoColumn = ({ heading, text, images, direction }) => {
+  const headingRef = useRef(null);
+  const textRef = useRef(null);
+
   useEffect(() => {
-    const heading = document.querySelectorAll("#heading-main");
-    const text = document.querySelectorAll("#text-main");
     const tl = gsap.timeline();
+
     tl.fromTo(
-      heading,
+      headingRef.current,
       {
         opacity: 0,
         y: -50,
@@ -21,8 +24,9 @@ const TwoColumn = ({ heading, text, images, direction }) => {
         ease: "power3.out",
       }
     );
+
     tl.fromTo(
-      text,
+      textRef.current,
       {
         opacity: 0,
         y: 100,
@@ -34,6 +38,10 @@ const TwoColumn = ({ heading, text, images, direction }) => {
         ease: "power3.out",
       }
     );
+
+    return () => {
+      tl.kill();
+    };
   }, []);
 
   return (
@@ -64,13 +72,13 @@ const TwoColumn = ({ heading, text, images, direction }) => {
       <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center UNCAGE-Bold">
         <div className="sm:w-[50vw] w-[80vw] text-center h-fit text-white flex flex-col items-center gap-3">
           <h1
-            id="heading-main"
+            ref={headingRef}
             className="xl:text-7xl font-extrabold lg:text-5xl text-3xl"
           >
             {heading}
           </h1>
           <p
-            id="text-main"
+            ref={textRef}
             className="lg:text-xl text-sm sm:w-3/5 w-full Absans-Regular"
           >
             {text}
@@ -79,6 +87,20 @@ const TwoColumn = ({ heading, text, images, direction }) => {
       </div>
     </div>
   );
+};
+
+TwoColumn.propTypes = {
+  heading: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
+  images: PropTypes.arrayOf(
+    PropTypes.shape({
+      image: PropTypes.shape({
+        url: PropTypes.string.isRequired,
+        alt: PropTypes.string,
+      }).isRequired,
+    })
+  ).isRequired,
+  direction: PropTypes.string,
 };
 
 export default TwoColumn;

@@ -1,19 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { gsap } from "gsap/dist/gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import { useEffect } from "react";
+import Image from "next/image";
+import dynamic from "next/dynamic";
+
 gsap.registerPlugin(ScrollTrigger);
 
 const PauseBlock = ({ texts, image }) => {
   useEffect(() => {
     const items = document.querySelectorAll("#text-firma");
     const text = document.querySelectorAll("#heading-firma");
+
     gsap.fromTo(
       items,
-      {
-        opacity: 0,
-        x: -100,
-      },
+      { opacity: 0, x: -100 },
       {
         opacity: 1,
         duration: 5,
@@ -31,9 +31,7 @@ const PauseBlock = ({ texts, image }) => {
 
     gsap.fromTo(
       text,
-      {
-        scale: 0.2,
-      },
+      { scale: 0.2 },
       {
         scale: 1.2,
         ease: "power3.out",
@@ -75,16 +73,15 @@ const PauseBlock = ({ texts, image }) => {
       </div>
 
       <div className="relative w-full xl:w-[50%] h-[50vh] xl:h-auto flex-grow">
-        <div
-          className="absolute w-full h-full bg-cover bg-center z-0 filter brightness-50 contrast-50 saturate-50"
-          style={{
-            backgroundImage: `url(${image.url})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black opacity-80"></div>
-        </div>
+        <Image
+          src={image.url}
+          alt="Background Image"
+          layout="fill" // Fills the parent div
+          objectFit="cover" // Ensures the image covers the area
+          quality={75} // You can adjust quality for better performance
+          className="absolute w-full h-full z-0 filter brightness-50 contrast-50 saturate-50"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black opacity-80"></div>
         <span
           id="heading-firma"
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-100 text-white text-3xl sm:text-5xl text-center UNCAGE font-light z-10"
@@ -96,4 +93,6 @@ const PauseBlock = ({ texts, image }) => {
   );
 };
 
-export default PauseBlock;
+export default dynamic(() => Promise.resolve(PauseBlock), {
+  ssr: false, // Disable SSR if this component is not essential on the first render
+});

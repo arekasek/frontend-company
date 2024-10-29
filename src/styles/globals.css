@@ -142,3 +142,21 @@ html {
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
     rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: "";
+  width: 0;
+  height: 3px;
+  background: grey;
+  pointer-events: none;
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: width 0.2s ease;
+}
+.nav-link:hover::after {
+  width: 100%;
+}
