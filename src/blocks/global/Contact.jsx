@@ -1,10 +1,15 @@
 import React from "react";
+import dynamic from "next/dynamic";
 import { FaPhoneSquareAlt } from "react-icons/fa";
 import { MdHomeWork } from "react-icons/md";
 import { MdMarkEmailRead } from "react-icons/md";
 import { GiSpikedFence } from "react-icons/gi";
 import { GoClockFill } from "react-icons/go";
-import MapComponent from "../MapComponent";
+
+// Dynamiczny import `MapComponent` tylko po stronie klienta
+const DynamicMapComponent = dynamic(() => import("../MapComponent"), {
+  ssr: false,
+});
 
 export default function Contact() {
   return (
@@ -13,7 +18,8 @@ export default function Contact() {
       className="w-full h-auto bg-[#444444c9] flex md:flex-row flex-col-reverse bg-[#555555] text-white md:p-12 p-8 gap-8"
     >
       <div className="md:w-[45%] w-full">
-        <MapComponent />
+        {/* Dynamiczny komponent mapy */}
+        <DynamicMapComponent />
       </div>
       <div className="md:w-[50%] w-full flex flex-col justify-center">
         <div className="w-[90%]">

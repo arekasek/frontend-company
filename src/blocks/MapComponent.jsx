@@ -1,13 +1,35 @@
-import React from "react";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import "leaflet/dist/leaflet.css";
+import L from "leaflet";
 
-const MapComponent = () => (
-  <iframe
-    title="map"
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2315.0671595111894!2d17.742053577132527!3d54.53231118532972!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46fddd408a56dbc9%3A0xc806e81eeff74232!2zV29qLVDFgm90LiBVc8WCdWdpIMWbbHVzYXJza2ll!5e0!3m2!1spl!2spl!4v1730306442732!5m2!1spl!2spl"
-    className="w-full h-full"
-    loading="lazy"
-    referrerPolicy="no-referrer-when-downgrade"
-  ></iframe>
-);
+const markerIcon = new L.Icon({
+  iconUrl:
+    "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png",
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  shadowUrl:
+    "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png",
+  shadowSize: [41, 41],
+});
 
-export default MapComponent;
+export default function MapComponent() {
+  return (
+    <MapContainer
+      center={[54.53232674867673, 17.74462849776392]}
+      zoom={13}
+      style={{ width: "100%", height: "100%" }}
+    >
+      <TileLayer
+        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        attribution='&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors'
+      />
+      <Marker
+        position={[54.53232674867673, 17.74462849776392]}
+        icon={markerIcon}
+      >
+        <Popup>Woj-Płot Ogrodzenia</Popup>
+      </Marker>
+    </MapContainer>
+  );
+}
