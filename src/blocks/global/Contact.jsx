@@ -4,7 +4,7 @@ import { MdHomeWork } from "react-icons/md";
 import { MdMarkEmailRead } from "react-icons/md";
 import { GiSpikedFence } from "react-icons/gi";
 import { GoClockFill } from "react-icons/go";
-import MapComponent from "./MapComponent";
+import MapComponent from "../MapComponent";
 
 export default function Contact() {
   return (
