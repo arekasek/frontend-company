@@ -2,12 +2,11 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ["localhost"],
+    domains: ["company-website-1d69.onrender.com"],
     remotePatterns: [
       {
-        protocol: "http",
-        hostname: "localhost",
-        port: "4000",
+        protocol: "https",
+        hostname: "company-website-1d69.onrender.com",
         pathname: "/media/**",
       },
     ],
