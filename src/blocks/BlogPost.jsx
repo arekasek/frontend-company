@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Carousel } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import gsap from "gsap";
@@ -7,6 +7,9 @@ import PropTypes from "prop-types";
 const TwoColumn = ({ heading, text, images, direction }) => {
   const headingRef = useRef(null);
   const textRef = useRef(null);
+  const [loadedImages, setLoadedImages] = useState(
+    Array(images.length).fill(false)
+  );
 
   useEffect(() => {
     const tl = gsap.timeline();
@@ -44,6 +47,30 @@ const TwoColumn = ({ heading, text, images, direction }) => {
     };
   }, []);
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry, index) => {
+          if (entry.isIntersecting) {
+            setLoadedImages((prev) => {
+              const updatedImages = [...prev];
+              updatedImages[index] = true;
+              return updatedImages;
+            });
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const imageElements = document.querySelectorAll(".carousel-image");
+    imageElements.forEach((img, index) => observer.observe(img));
+
+    return () => {
+      imageElements.forEach((img) => observer.unobserve(img));
+    };
+  }, [images.length]);
+
   return (
     <div className="relative flex items-center justify-center w-full min-h-[90vh] max-h-[90vh] -z-0 bg-gray-500">
       <Carousel
@@ -56,15 +83,17 @@ const TwoColumn = ({ heading, text, images, direction }) => {
         {images.map((item, index) => (
           <Carousel.Item
             key={index}
-            className="relative w-full min-h-[90vh] max-h-[90vh]"
+            className="relative w-full min-h-[90vh] max-h-[90vh] carousel-image"
           >
-            <div
-              className="absolute top-0 left-0 w-[100vw] h-full bg-cover bg-center z-0 filter brightness-50 contrast-50 saturate-50 bg-opacity-40"
-              style={{ backgroundImage: `url(${item.image.url})` }}
-              alt={item.image.alt}
-            >
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black opacity-80"></div>
-            </div>
+            {loadedImages[index] && (
+              <div
+                className="absolute top-0 left-0 w-[100vw] h-full bg-cover bg-center z-0 filter brightness-50 contrast-50 saturate-50 bg-opacity-40"
+                style={{ backgroundImage: `url(${item.image.url})` }}
+                alt={item.image.alt}
+              >
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black opacity-80"></div>
+              </div>
+            )}
           </Carousel.Item>
         ))}
       </Carousel>
