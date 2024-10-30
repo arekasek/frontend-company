@@ -51,7 +51,10 @@ const PauseBlock = ({ texts, image }) => {
       className="relative flex items-stretch justify-center w-full h-fit -z-0 text-white Absans-Regular font-medium flex-col-reverse xl:flex-row bg-[#555555]"
     >
       <div className="xl:w-[50%] w-[100%] sm:p-12 text-about-container flex-grow">
-        <div className="grid grid-cols-1 sm:grid-cols-2 sm:gap-4 h-full text-grid-container">
+        <ul
+          className="grid grid-cols-1 sm:grid-cols-2 sm:gap-4 h-full text-grid-container"
+          style={{ padding: "0" }}
+        >
           {texts.map((item, index) => (
             <li
               id="text-firma"
@@ -69,16 +72,16 @@ const PauseBlock = ({ texts, image }) => {
               </span>
             </li>
           ))}
-        </div>
+        </ul>
       </div>
 
       <div className="relative w-full xl:w-[50%] h-[50vh] xl:h-auto flex-grow">
         <Image
           src={image.url}
           alt="Background Image"
-          layout="fill" // Fills the parent div
-          objectFit="cover" // Ensures the image covers the area
-          quality={75} // You can adjust quality for better performance
+          layout="fill"
+          objectFit="cover"
+          quality={75}
           className="absolute w-full h-full z-0 filter brightness-50 contrast-50 saturate-50"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black opacity-80"></div>
@@ -94,5 +97,5 @@ const PauseBlock = ({ texts, image }) => {
 };
 
 export default dynamic(() => Promise.resolve(PauseBlock), {
-  ssr: false, // Disable SSR if this component is not essential on the first render
+  ssr: false,
 });
