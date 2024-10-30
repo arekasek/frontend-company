@@ -59,7 +59,6 @@ const TwoColumn = ({ heading, text, images, direction }) => {
             className="relative w-full min-h-[90vh] max-h-[90vh]"
           >
             <div
-              loading="lazy"
               className="absolute top-0 left-0 w-[100vw] h-full bg-cover bg-center z-0 filter brightness-50 contrast-50 saturate-50 bg-opacity-40"
               style={{ backgroundImage: `url(${item.image.url})` }}
               alt={item.image.alt}
