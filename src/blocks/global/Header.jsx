@@ -102,9 +102,19 @@ export default function Header() {
                 </Link>
               ))}
               <div className="flex gap-4">
-                <FaFacebookSquare className="text-4xl text-[#555555]" />
-                <IoIosMail className="text-4xl text-[#555555]" />
-                <FaSquarePhone className="text-4xl text-[#555555]" />
+                {globalData.sidebar.menuItems.map((item) => (
+                  <Link key={item.id} href={item.link} id="sidebar-links">
+                    {item.text === "Facebook" && (
+                      <FaFacebookSquare className="sidebar-icon text-[#555]" />
+                    )}
+                    {item.text === "Email" && (
+                      <IoIosMail className="sidebar-icon text-[#555]" />
+                    )}
+                    {item.text === "Telefon" && (
+                      <FaSquarePhone className="sidebar-icon text-[#555]" />
+                    )}
+                  </Link>
+                ))}
               </div>
             </div>
           </div>

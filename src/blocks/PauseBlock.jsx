@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap/dist/gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import Image from "next/image";
@@ -7,47 +7,54 @@ import dynamic from "next/dynamic";
 gsap.registerPlugin(ScrollTrigger);
 
 const PauseBlock = ({ texts, image }) => {
-  useEffect(() => {
-    const items = document.querySelectorAll("#text-firma");
-    const text = document.querySelectorAll("#heading-firma");
+  const textRefs = useRef([]);
+  const headingRef = useRef(null);
+  const containerRef = useRef(null);
 
-    gsap.fromTo(
+  useEffect(() => {
+    const items = textRefs.current;
+    const heading = headingRef.current;
+
+    const scrollTriggerInstance = ScrollTrigger.create({
+      trigger: containerRef.current,
+      start: "top 100%",
+      end: "bottom 50%",
+      scrub: true,
+    });
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: "top 100%",
+        end: "bottom 50%",
+        scrub: true,
+      },
+    });
+
+    tl.fromTo(
       items,
       { opacity: 0, x: -100 },
       {
         opacity: 1,
-        duration: 5,
-        stagger: 1,
         x: 0,
+        duration: 1,
+        stagger: 0.3,
         ease: "power3.out",
-        scrollTrigger: {
-          trigger: "#text-firma-cont",
-          start: "top 100%",
-          end: "bottom 50%",
-          scrub: true,
-        },
       }
     );
 
-    gsap.fromTo(
-      text,
-      { scale: 0.2 },
-      {
-        scale: 1.2,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: "#text-firma-cont",
-          start: "top 100%",
-          end: "bottom 50%",
-          scrub: true,
-        },
-      }
-    );
+    tl.fromTo(heading, { scale: 0.2 }, { scale: 1.2, ease: "power3.out" }, 0);
+
+    return () => {
+      scrollTriggerInstance.kill();
+      gsap.killTweensOf(items);
+      gsap.killTweensOf(heading);
+    };
   }, []);
 
   return (
     <div
-      id="text-firma-cont"
+      ref={containerRef}
       className="relative flex items-stretch justify-center w-full h-fit -z-0 text-white Absans-Regular font-medium flex-col-reverse xl:flex-row bg-[#555555]"
     >
       <div className="xl:w-[50%] w-[100%] sm:p-12 text-about-container flex-grow">
@@ -57,8 +64,8 @@ const PauseBlock = ({ texts, image }) => {
         >
           {texts.map((item, index) => (
             <li
-              id="text-firma"
               key={index}
+              ref={(el) => (textRefs.current[index] = el)}
               className={`sm:text-lg text-medium xl:flex-row flex flex-col items-center gap-4 mb-6 transform transition-transform hover:scale-105 duration-300`}
             >
               <div
@@ -86,7 +93,7 @@ const PauseBlock = ({ texts, image }) => {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black opacity-80"></div>
         <span
-          id="heading-firma"
+          ref={headingRef}
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-100 text-white text-3xl sm:text-5xl text-center UNCAGE font-light z-10"
         >
           Dlaczego my?

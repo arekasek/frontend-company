@@ -52,11 +52,13 @@ export default function Sidebar() {
         {globalData.sidebar.menuItems.map((item) => (
           <Link key={item.id} href={item.link} id="sidebar-links">
             {item.text === "Facebook" && (
-              <FaFacebookSquare className="sidebar-icon" />
+              <FaFacebookSquare className="sidebar-icon text-[#fff]" />
             )}
-            {item.text === "Email" && <IoIosMail className="sidebar-icon" />}
+            {item.text === "Email" && (
+              <IoIosMail className="sidebar-icon text-[#fff]" />
+            )}
             {item.text === "Telefon" && (
-              <FaSquarePhone className="sidebar-icon" />
+              <FaSquarePhone className="sidebar-icon text-[#fff]" />
             )}
           </Link>
         ))}

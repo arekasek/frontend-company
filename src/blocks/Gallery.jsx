@@ -18,7 +18,15 @@ const Gallery = ({
     const galleryElement = document.querySelector(".gallery-container");
     const imagesElement = document.querySelectorAll(".gallery-image");
 
-    gsap.fromTo(
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: galleryElement,
+        start: "top 90%",
+        toggleActions: "play none none none",
+      },
+    });
+
+    tl.fromTo(
       galleryElement,
       {
         opacity: 0,
@@ -29,15 +37,10 @@ const Gallery = ({
         scale: 1,
         duration: 1.5,
         ease: "power3.out",
-        scrollTrigger: {
-          trigger: galleryElement,
-          start: "top 80%",
-          toggleActions: "play none none none",
-        },
       }
     );
 
-    gsap.fromTo(
+    tl.fromTo(
       imagesElement,
       {
         opacity: 0,
@@ -49,11 +52,8 @@ const Gallery = ({
         duration: 1,
         stagger: 0.2,
         ease: "power2.out",
-        scrollTrigger: {
-          trigger: galleryElement,
-          start: "top 80%",
-        },
-      }
+      },
+      "-=1.2"
     );
   }, []);
 
