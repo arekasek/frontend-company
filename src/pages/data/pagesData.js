@@ -1,4 +1,4 @@
-export const pagesData = {
+export default pagesData = {
   home: {
     slug: "home",
     metaTitle: "Woj-Płot | Usługi ślusarskie",
