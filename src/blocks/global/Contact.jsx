@@ -6,7 +6,6 @@ import { MdMarkEmailRead } from "react-icons/md";
 import { GiSpikedFence } from "react-icons/gi";
 import { GoClockFill } from "react-icons/go";
 
-// Dynamiczny import `MapComponent` tylko po stronie klienta
 const DynamicMapComponent = dynamic(() => import("../MapComponent"), {
   ssr: false,
 });

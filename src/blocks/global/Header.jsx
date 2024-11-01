@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
-import header from "@/globalData/header.json";
+import globalData from "@/globalData/globalData";
 import Link from "next/link";
 import { gsap } from "gsap";
 import Headroom from "react-headroom";
@@ -62,7 +62,7 @@ export default function Header() {
     <Headroom id="header">
       <div className="w-full min-h-[10vh] max-h-[10vh] font-quicksand bg-gray-100 z-50 p-5 text-center flex md:justify-center justify-end items-center shadow-md">
         <div className="hidden md:flex gap-8">
-          {header.navLinks.map((link, index) => (
+          {globalData.header.navLinks.map((link, index) => (
             <Link
               key={index}
               href={link.link}
@@ -90,7 +90,7 @@ export default function Header() {
             className="absolute top-16 left-0 w-full bg-gray-100 shadow-md md:hidden"
           >
             <div className="flex flex-col items-center gap-4 py-4">
-              {header.navLinks.map((link, index) => (
+              {globalData.header.navLinks.map((link, index) => (
                 <Link
                   key={index}
                   href={link.link}

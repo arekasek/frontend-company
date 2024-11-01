@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import Link from "next/link";
-import sidebar from "@/globalData/sidebar.json";
+import globalData from "@/globalData/globalData";
 import { gsap } from "gsap";
 
 // ICONS
@@ -49,15 +49,17 @@ export default function Sidebar() {
       className="sidebar-contact fixed z-40 right-6 p-8 gap-6 flex-col logo-blue-color rounded-xl hidden xl:flex sidebar-contact-shadow"
     >
       <div className="flex flex-col gap-8 justify-center">
-        <Link href="https://www.facebook.com/profile.php?id=100057877560719">
-          <FaFacebookSquare className="sidebar-icon" />
-        </Link>
-        <Link href="mailto:wojplot@wp.pl">
-          <IoIosMail className="sidebar-icon" />
-        </Link>
-        <Link href="tel:+480000000000">
-          <FaSquarePhone className="sidebar-icon" />
-        </Link>
+        {globalData.sidebar.menuItems.map((item) => (
+          <Link key={item.id} href={item.link} id="sidebar-links">
+            {item.text === "Facebook" && (
+              <FaFacebookSquare className="sidebar-icon" />
+            )}
+            {item.text === "Email" && <IoIosMail className="sidebar-icon" />}
+            {item.text === "Telefon" && (
+              <FaSquarePhone className="sidebar-icon" />
+            )}
+          </Link>
+        ))}
       </div>
     </div>
   );

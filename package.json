@@ -3,9 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "node scripts/fetchGlobalData.js && next dev",
+    "dev": "next dev",
     "build": "next build",
-    "prebuild": "node scripts/fetchGlobalData.js",
     "start": "next start",
     "lint": "next lint"
   },
