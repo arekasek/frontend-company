@@ -2,11 +2,11 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ["company-website-1d69.onrender.com"],
+    domains: ["wojplot.pl"],
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "company-website-1d69.onrender.com",
+        hostname: "wojplot.pl",
         pathname: "/media/**",
       },
     ],
