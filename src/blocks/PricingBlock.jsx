@@ -52,11 +52,11 @@ const PricingBlock = ({ pricingItems }) => {
               ></div>
 
               <div className="absolute inset-0 flex flex-col items-center justify-center">
-                <span className="text-white text-center text-2xl Absans-Regular font-bold group-hover:text-3xl transition-all duration-500 ease-in-out">
+                <span className="text-white text-center text-xl xl:text-3xl Absans-Regular font-bold group-hover:text-3xl transition-all duration-500 ease-in-out">
                   {item.description}
                 </span>
 
-                <span className="mt-2 text-white text-center Absans-Regular text-sm font-thin hover:underline">
+                <span className="mt-2 text-white text-center Absans-Regular text-xs xl:text-sm font-thin hover:underline">
                   Zobacz więcej
                 </span>
               </div>

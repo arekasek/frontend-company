@@ -18,7 +18,7 @@ export default function MapComponent() {
     <MapContainer
       center={[54.53232674867673, 17.74462849776392]}
       zoom={13}
-      style={{ width: "100%", height: "100%" }}
+      style={{ width: "100%", height: "100%", zIndex: 0 }}
     >
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
