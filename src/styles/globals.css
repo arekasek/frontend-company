@@ -1,24 +1,20 @@
 @font-face {
   font-family: "Quicksand";
   src: url("/fonts/ttf/Quicksand-Regular.ttf") format("opentype");
-  font-display: swap;
 }
 @font-face {
   font-family: "UNCAGE-Bold";
   src: url("/fonts/otf/UNCAGE-Bold.otf") format("opentype");
-  font-display: swap;
 }
 
 @font-face {
   font-family: "UNCAGE";
   src: url("/fonts/otf/UNCAGE-SemiBold.otf") format("opentype");
-  font-display: swap;
 }
 
 @font-face {
   font-family: "Absans-Regular";
   src: url("/fonts/otf/Absans-Regular.otf") format("opentype");
-  font-display: swap;
 }
 
 .UNCAGE {

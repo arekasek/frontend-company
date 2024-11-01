@@ -65,6 +65,7 @@ const TwoColumn = ({ heading, text, images, direction }) => {
                 alt={item.image.alt || `Slide image ${index + 1}`}
                 fill
                 priority={index === 0}
+                loading="eager"
                 className="object-cover"
                 quality={75}
               />
