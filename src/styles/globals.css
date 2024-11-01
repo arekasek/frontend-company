@@ -2,18 +2,23 @@
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap");
 @font-face {
-  font-family: UNCAGE-Bold;
+  font-family: "UNCAGE-Bold";
   src: url("/fonts/otf/UNCAGE-Bold.otf") format("opentype");
-}
-@font-face {
-  font-family: UNCAGE;
-  src: url("/fonts/otf/UNCAGE-SemiBold.otf") format("opentype");
+  font-display: swap;
 }
 
 @font-face {
-  font-family: Absans-Regular;
-  src: url("/fonts/otf/Absans-Regular.otf") format("opentype");
+  font-family: "UNCAGE";
+  src: url("/fonts/otf/UNCAGE-SemiBold.otf") format("opentype");
+  font-display: swap;
 }
+
+@font-face {
+  font-family: "Absans-Regular";
+  src: url("/fonts/otf/Absans-Regular.otf") format("opentype");
+  font-display: swap;
+}
+
 .UNCAGE {
   font-family: UNCAGE;
 }

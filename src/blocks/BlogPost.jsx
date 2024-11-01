@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { Carousel } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import gsap from "gsap";
+import Image from "next/image";
 import PropTypes from "prop-types";
 
 const TwoColumn = ({ heading, text, images, direction }) => {
@@ -58,11 +59,14 @@ const TwoColumn = ({ heading, text, images, direction }) => {
             key={index}
             className="relative w-full min-h-[90vh] max-h-[90vh]"
           >
-            <div
-              className="absolute top-0 left-0 w-[100vw] h-full bg-cover bg-center z-0 filter brightness-50 contrast-50 saturate-50 bg-opacity-40"
-              style={{ backgroundImage: `url(${item.image.url})` }}
-              alt={item.image.alt}
-            >
+            <div className="absolute top-0 left-0 w-full h-full z-0 filter brightness-50 contrast-50 saturate-50 bg-opacity-40">
+              <Image
+                src={item.image.url}
+                alt={item.image.alt || `Slide image ${index + 1}`}
+                layout="fill"
+                objectFit="cover"
+                quality={75}
+              />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black opacity-80"></div>
             </div>
           </Carousel.Item>
