@@ -63,8 +63,9 @@ const TwoColumn = ({ heading, text, images, direction }) => {
               <Image
                 src={item.image.url}
                 alt={item.image.alt || `Slide image ${index + 1}`}
-                layout="fill"
-                objectFit="cover"
+                fill
+                priority={index === 0}
+                className="object-cover"
                 quality={75}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black opacity-80"></div>
