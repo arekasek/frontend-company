@@ -16,7 +16,7 @@ export default function Contact() {
       id="Kontakt"
       className="w-full h-auto bg-[#444444c9] flex md:flex-row flex-col-reverse bg-[#555555] text-white md:p-12 p-8 gap-8"
     >
-      <div className="md:w-[45%] w-full">
+      <div className="md:w-[45%] w-full h-[200px] md:h-auto">
         {/* Dynamiczny komponent mapy */}
         <DynamicMapComponent />
       </div>
