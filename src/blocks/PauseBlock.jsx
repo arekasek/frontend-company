@@ -12,44 +12,48 @@ const PauseBlock = ({ texts, image }) => {
   const containerRef = useRef(null);
 
   useEffect(() => {
-    const items = textRefs.current;
-    const heading = headingRef.current;
+    const isMobile = () => window.innerWidth < 648;
 
-    const scrollTriggerInstance = ScrollTrigger.create({
-      trigger: containerRef.current,
-      start: "top 100%",
-      end: "bottom 50%",
-      scrub: true,
-    });
+    if (!isMobile()) {
+      const items = textRefs.current;
+      const heading = headingRef.current;
 
-    const tl = gsap.timeline({
-      scrollTrigger: {
+      const scrollTriggerInstance = ScrollTrigger.create({
         trigger: containerRef.current,
         start: "top 100%",
         end: "bottom 50%",
         scrub: true,
-      },
-    });
+      });
 
-    tl.fromTo(
-      items,
-      { opacity: 0, x: -100 },
-      {
-        opacity: 1,
-        x: 0,
-        duration: 1,
-        stagger: 0.3,
-        ease: "power3.out",
-      }
-    );
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top 100%",
+          end: "bottom 50%",
+          scrub: true,
+        },
+      });
 
-    tl.fromTo(heading, { scale: 0.2 }, { scale: 1.2, ease: "power3.out" }, 0);
+      tl.fromTo(
+        items,
+        { opacity: 0, x: -100 },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 1,
+          stagger: 0.3,
+          ease: "power3.out",
+        }
+      );
 
-    return () => {
-      scrollTriggerInstance.kill();
-      gsap.killTweensOf(items);
-      gsap.killTweensOf(heading);
-    };
+      tl.fromTo(heading, { scale: 0.2 }, { scale: 1.2, ease: "power3.out" }, 0);
+
+      return () => {
+        scrollTriggerInstance.kill();
+        gsap.killTweensOf(items);
+        gsap.killTweensOf(heading);
+      };
+    }
   }, []);
 
   return (

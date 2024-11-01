@@ -6,27 +6,62 @@ gsap.registerPlugin(ScrollTrigger);
 
 const PricingBlock = ({ pricingItems }) => {
   useEffect(() => {
-    const items = document.querySelectorAll(".pricing-item");
-    gsap.fromTo(
-      items,
-      {
-        opacity: 0,
-        scale: 0.8,
-      },
-      {
-        opacity: 1,
-        scale: 1,
-        duration: 1,
-        stagger: 0.3,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: "#OFERTA",
-          start: "top 100%",
-          end: "bottom 80%",
-          scrub: true,
+    const isMobile = () => window.innerWidth < 648;
+
+    if (!isMobile()) {
+      const items = document.querySelectorAll(".pricing-item");
+      gsap.fromTo(
+        items,
+        {
+          opacity: 0,
+          scale: 0.8,
         },
+        {
+          opacity: 1,
+          scale: 1,
+          duration: 1,
+          stagger: 0.3,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: "#OFERTA",
+            start: "top 100%",
+            end: "bottom 80%",
+            scrub: true,
+          },
+        }
+      );
+    }
+    const handleResize = () => {
+      if (!isMobile()) {
+        const items = document.querySelectorAll(".pricing-item");
+        gsap.fromTo(
+          items,
+          {
+            opacity: 0,
+            scale: 0.8,
+          },
+          {
+            opacity: 1,
+            scale: 1,
+            duration: 1,
+            stagger: 0.3,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: "#OFERTA",
+              start: "top 100%",
+              end: "bottom 80%",
+              scrub: true,
+            },
+          }
+        );
       }
-    );
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
 
   return (
