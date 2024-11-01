@@ -60,7 +60,7 @@ export default function Header() {
 
   return (
     <Headroom id="header">
-      <div className="w-full min-h-[10vh] max-h-[10vh] font-quicksand bg-gray-100 z-50 p-5 text-center flex md:justify-center justify-end items-center shadow-md">
+      <div className="w-full min-h-[10vh] max-h-[10vh] Quicksand bg-gray-100 z-50 p-5 text-center flex md:justify-center justify-end items-center shadow-md">
         <div className="hidden md:flex gap-8">
           {globalData.header.navLinks.map((link, index) => (
             <Link
