@@ -1,6 +1,6 @@
 import RenderBlocks from "@/utils/RenderBlocks";
 import Head from "next/head";
-import { pagesData } from "../pages/data/pagesData";
+import { pagesData } from "@/data/pagesData";
 
 const Page = ({ page }) => {
   if (!page) {
