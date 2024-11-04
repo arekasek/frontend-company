@@ -58,6 +58,7 @@ const PauseBlock = ({ texts, image }) => {
 
   return (
     <div
+      id="text-firma-cont"
       ref={containerRef}
       className="relative flex items-stretch justify-center w-full h-fit -z-0 text-white Absans-Regular font-medium flex-col-reverse xl:flex-row bg-[#555555]"
     >

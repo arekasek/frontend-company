@@ -74,7 +74,7 @@ const PricingBlock = ({ pricingItems }) => {
                 />
               </div>
 
-              <div className="absolute inset-0 flex flex-col items-center justify-center z-10">
+              <div className="absolute inset-0 flex flex-col items-center justify-center z-0">
                 <span className="text-white text-center text-xl xl:text-3xl Absans-Regular font-bold transition-transform duration-300 ease-in-out transform group-hover:scale-125">
                   {item.description}
                 </span>
