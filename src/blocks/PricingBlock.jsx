@@ -68,8 +68,8 @@ const PricingBlock = ({ pricingItems }) => {
                   alt={`Image for ${item.description}`}
                   layout="fill"
                   objectFit="cover"
+                  objectPosition="center"
                   quality={75}
-                  loading="eager"
                   className="shadow-main-categories w-full sm:h-full h-[25vh] bg-center z-0 filter brightness-50 contrast-50 saturate-50 group-hover:scale-105 group-hover:brightness-50 group-hover:contrast-100 group-hover:saturate-100 transition-all duration-500 ease-in-out"
                 />
               </div>

@@ -118,7 +118,7 @@ export const pagesData = {
       {
         blockType: "Show",
         heading: "Balustrady",
-        text: "Nasze balustrady wykonane są z solidnych materiałów, z dbałością o każdy detal, co gwarantuje nie tylko estetyczny wygląd, ale również bezpieczeństwo i długowieczność. Realizujemy zarówno nowoczesne, minimalistyczne projekty, jak i klasyczne, zdobione wzory, w tym balustrady kute o artystycznym charakterze. Każdy projekt dopasowujemy do indywidualnych potrzeb klienta, oferując balustrady idealne zarówno do wnętrz, jak i na zewnątrz budynków.",
+        text: "Nasze balustrady wykonane są z wyjątkową dbałością o każdy detal, co gwarantuje nie tylko estetyczny wygląd, ale również bezpieczeństwo i długowieczność. Realizujemy zarówno nowoczesne, minimalistyczne projekty, jak i klasyczne, zdobione wzory, w tym balustrady kute o artystycznym charakterze. Każdy projekt dopasowujemy do indywidualnych potrzeb klienta, oferując balustrady idealne zarówno do wnętrz, jak i na zewnątrz budynków. Oferujemy szeroki wachlarz stylów i wykończeń, aby spełnić oczekiwania nawet najbardziej wymagających klientów. Zapewniamy również profesjonalny montaż, który jest gwarancją trwałości i stabilności balustrady przez wiele lat.",
         image: {
           url: "/media/balustrada-tło.avif",
           alt: "Balustrady Background",
@@ -187,6 +187,89 @@ export const pagesData = {
           {
             id: 16,
             image: { url: "/media/balustrady/16.avif", alt: "Balustrada 16" },
+          },
+        ],
+      },
+    ],
+  },
+  bramy: {
+    slug: "bramy",
+    metaTitle: "Woj-Płot | Bramy",
+    metaDescription: "Oferujemy szeroką gamę balustrad...",
+    metaImage: "/media/balustrada-tło.avif",
+    layout: [
+      {
+        blockType: "Show",
+        heading: "Bramy",
+        text: "Nasze bramy kute metalowe łączą tradycyjny rzemiosło z nowoczesnym designem, oferując zarówno estetykę, jak i bezpieczeństwo. Wykonane z solidnych materiałów, zapewniają unikalny charakter i wytrzymałość. Oferujemy szeroki wybór wzorów – od eleganckich i klasycznych po nowoczesne i minimalistyczne – które idealnie dopasowują się do stylu Twojego domu. ",
+        image: {
+          url: "/media/balustrada-tło.avif",
+          alt: "Bramy Background",
+        },
+        images: [
+          {
+            id: 1,
+            image: { url: "/media/bramy/1.avif", alt: "bramy 1" },
+          },
+          {
+            id: 2,
+            image: { url: "/media/bramy/2.avif", alt: "bramy 2" },
+          },
+          {
+            id: 3,
+            image: { url: "/media/bramy/3.avif", alt: "bramy 3" },
+          },
+          {
+            id: 4,
+            image: { url: "/media/bramy/4.avif", alt: "bramy 4" },
+          },
+          {
+            id: 5,
+            image: { url: "/media/bramy/5.avif", alt: "bramy 5" },
+          },
+          {
+            id: 6,
+            image: { url: "/media/bramy/6.avif", alt: "bramy 6" },
+          },
+          {
+            id: 7,
+            image: { url: "/media/bramy/7.avif", alt: "bramy 7" },
+          },
+          {
+            id: 8,
+            image: { url: "/media/bramy/8.avif", alt: "bramy 8" },
+          },
+          {
+            id: 9,
+            image: { url: "/media/bramy/9.avif", alt: "bramy 9" },
+          },
+          {
+            id: 10,
+            image: { url: "/media/bramy/10.avif", alt: "bramy 10" },
+          },
+          {
+            id: 11,
+            image: { url: "/media/bramy/11.avif", alt: "bramy 11" },
+          },
+          {
+            id: 12,
+            image: { url: "/media/bramy/12.avif", alt: "bramy 12" },
+          },
+          {
+            id: 13,
+            image: { url: "/media/bramy/13.avif", alt: "bramy 13" },
+          },
+          {
+            id: 14,
+            image: { url: "/media/bramy/14.avif", alt: "bramy 14" },
+          },
+          {
+            id: 15,
+            image: { url: "/media/bramy/15.avif", alt: "bramy 15" },
+          },
+          {
+            id: 16,
+            image: { url: "/media/bramy/16.avif", alt: "bramy 16" },
           },
         ],
       },

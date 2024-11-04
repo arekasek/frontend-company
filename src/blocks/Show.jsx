@@ -52,9 +52,9 @@ const Show = ({ image, images, text, heading }) => {
   };
 
   return (
-    <>
-      <div className="w-full min-h-[90dvh] h-fit flex flex-col xl:flex-row p-8 sm:p-12 gap-4 sm:gap-12">
-        <div className="relative w-full xl:w-[25dvw] h-auto xl:h-full">
+    <div className="w-full h-full flex items-center justify-center">
+      <div className="w-full xl:w-[80dvw] min-h-[90dvh] h-fit flex flex-col p-8 sm:p-12 gap-4 sm:gap-12">
+        <div className="relative w-full h-auto xl:h-full">
           <div
             className="absolute inset-0 z-0 bg-[#55555521] filter brightness-50 contrast-50 saturate-50 bg-opacity-15 "
             style={{
@@ -66,27 +66,30 @@ const Show = ({ image, images, text, heading }) => {
           >
             <div className="absolute inset-0 bg-gradient-to-t from-black via-gray-400 to-black opacity-85"></div>
           </div>
-
-          <div className="relative z-0 h-full flex flex-col justify-between p-6 sm:p-12 Absans-Regular text-white">
-            <span
-              id="heading-main"
-              className="md:text-3xl lg:text-4xl 2xl:5xl text-[7vw] UNCAGE-Bold"
-            >
-              {heading}
-              <hr className="border-4" />
-            </span>
-            <p className="text-justify text-sm 2xl:text-lg lg:text-base">
-              {text}
-            </p>
-            <div className="w-full flex items-center justify-center -z-10">
-              <button className="bg-[#292929] hover:bg-black hover:w-[80%] transition-all duration-500 w-[100%] p-3 -z-10">
-                Sprawdź termin
-              </button>
+          <div className="w-full h-full flex items-center justify-center">
+            <div className="xl:w-[90%] w-full">
+              <div className="relative z-0 h-full flex flex-col justify-between p-6 sm:p-12 Absans-Regular text-white">
+                <span
+                  id="heading-main"
+                  className="md:text-3xl lg:text-4xl 2xl:5xl text-[7vw] UNCAGE-Bold"
+                >
+                  {heading}
+                  <hr className="border-4" />
+                </span>
+                <p className="text-justify text-sm 2xl:text-lg lg:text-base">
+                  {text}
+                </p>
+                <div className="w-full flex items-center justify-center -z-10">
+                  <button className="bg-[#292929] hover:bg-black hover:w-[80%] transition-all duration-500 w-[100%] p-3 -z-10">
+                    Sprawdź termin
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
-        <div className="w-full xl:w-[75dvw] h-auto xl:h-full grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-x-4 gap-y-4">
+        <div className="w-full min-h-screen grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
           {images.map((item) => (
             <div
               key={item.id}
@@ -125,7 +128,7 @@ const Show = ({ image, images, text, heading }) => {
           </button>
         </div>
       )}
-    </>
+    </div>
   );
 };
 

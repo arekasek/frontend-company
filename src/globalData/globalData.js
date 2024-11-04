@@ -1,5 +1,3 @@
-// src/globalData/GlobalData.js
-
 const globalData = {
   bottomNavLinks: [
     {
@@ -64,7 +62,7 @@ const globalData = {
       },
       {
         icon: "6705547158a8a20f98e6fd00",
-        link: "tel:+480000000000", // Dodaj numer telefonu
+        link: "tel:+480000000000",
         text: "Telefon",
         id: "670553c7f56b2a14523e10c3",
       },
