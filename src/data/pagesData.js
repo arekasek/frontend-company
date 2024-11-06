@@ -2,7 +2,8 @@ export const pagesData = {
   home: {
     slug: "home",
     metaTitle: "Woj-Płot | Usługi ślusarskie",
-    metaDescription: "Najwyższej jakości usługi ślusarskie...",
+    metaDescription:
+      "Firma Woj-Płot, działająca na rynku od 2000 roku, oferuje najwyższej jakości usługi ślusarskie, w tym bramy, ogrodzenia, balustrady, kraty, kute meble oraz konstrukcje metalowe. Specjalizujemy się również w wszelkiego rodzaju kowalstwie artystycznym. Działamy na terenie Lęborka i Pomorza, zapewniając profesjonalizm i precyzję w każdym projekcie. Zapraszamy do współpracy!",
     metaImage: "/images/home-image.jpg",
     layout: [
       {

@@ -1,0 +1,17 @@
+# robots.txt for Woj-Płot
+
+# Allow all crawlers access to everything
+User-agent: *
+Disallow: /admin/
+Disallow: /private/
+
+# Disallow specific files or directories
+Disallow: /login/
+Disallow: /checkout/
+
+# Allow Googlebot to crawl everything
+User-agent: Googlebot
+Disallow: 
+
+# Sitemap file location (if you have a sitemap)
+Sitemap: https://www.wojplot.pl/sitemap.xml

@@ -15,6 +15,8 @@ const Page = ({ page }) => {
         <meta property="og:title" content={page.metaTitle} />
         <meta property="og:description" content={page.metaDescription} />
         <meta property="og:image" content={page.metaImage} />
+        <link rel="icon" href="/logo.png" />
+        <link rel="apple-touch-icon" href="/logo.png" />
       </Head>
 
       <RenderBlocks layout={page.layout} />

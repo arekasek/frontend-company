@@ -17,14 +17,13 @@ export default function Contact() {
       className="w-full h-auto bg-[#444444c9] flex md:flex-row flex-col-reverse bg-[#555555] text-white md:p-12 p-8 gap-8"
     >
       <div className="md:w-[45%] w-full h-[200px] md:h-auto">
-        {/* Dynamiczny komponent mapy */}
         <DynamicMapComponent />
       </div>
       <div className="md:w-[50%] w-full flex flex-col justify-center">
         <div className="w-[90%]">
-          <h1 className="md:text-5xl lg:text-7xl text-3xl UNCAGE-Bold">
+          <h3 className="md:text-5xl lg:text-7xl text-3xl UNCAGE-Bold">
             Kontakt
-          </h1>
+          </h3>
           <hr className="border-4 mb-4 mt-1 border-white" />
           <div className="text-base md:text-lg Absans-Regular space-y-4">
             <ContactDetail
