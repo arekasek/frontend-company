@@ -1,47 +1,37 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { gsap } from "gsap";
+import Image from "next/image";
 
-const Show = ({ image, images, text, heading }) => {
+const Show = React.memo(({ image, images, text, heading }) => {
   const [activeImage, setActiveImage] = useState(image);
   const [isFullScreen, setIsFullScreen] = useState(false);
-  const imageRef = useRef(null);
-
   const placeholderUrl = "https://via.placeholder.com/600x400?text=No+Image";
-  useEffect(() => {
-    if (imageRef.current) {
-      gsap.fromTo(
-        imageRef.current,
-        { opacity: 0 },
-        { opacity: 1, duration: 0.5, ease: "power3.out" }
-      );
-    }
-  }, [activeImage]);
 
-  useEffect(() => {
-    const photo = document.querySelectorAll(".photo-container");
-    gsap.fromTo(
-      photo,
-      {
-        opacity: 0,
-      },
-      {
-        opacity: 1,
-        stagger: 0.2,
-        duration: 0.2,
-        ease: "power3.out",
-        once: true,
+  const handleLazyLoad = useCallback((entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        gsap.fromTo(
+          entry.target,
+          { opacity: 0, scale: 0.9 },
+          { opacity: 1, scale: 1, duration: 0.5, ease: "power3.out" }
+        );
+        observer.unobserve(entry.target);
       }
-    );
+    });
   }, []);
 
   useEffect(() => {
-    const imageMain = document.querySelectorAll("#image-main");
-    gsap.fromTo(
-      imageMain,
-      { opacity: 0 },
-      { opacity: 1, duration: 0.5, ease: "power3.out" }
-    );
-  }, []);
+    const observer = new IntersectionObserver(handleLazyLoad, {
+      root: null,
+      threshold: 0.1,
+    });
+
+    const photos = document.querySelectorAll(".photo-container");
+    photos.forEach((photo) => observer.observe(photo));
+
+    return () => observer.disconnect();
+  }, [handleLazyLoad]);
+
   const handleImageClick = (item) => {
     setActiveImage(item.image);
     setIsFullScreen(true);
@@ -56,14 +46,17 @@ const Show = ({ image, images, text, heading }) => {
       <div className="w-full xl:w-[80dvw] min-h-[90dvh] h-fit flex flex-col p-8 sm:p-12 gap-4 sm:gap-12">
         <div className="relative w-full h-auto xl:h-full">
           <div
-            className="absolute inset-0 z-0 bg-[#55555521] filter brightness-50 contrast-50 saturate-50 bg-opacity-15 "
-            style={{
-              backgroundImage: `url(${image.url || placeholderUrl})`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-            }}
+            className="absolute inset-0 z-0 bg-[#55555521] filter brightness-50 contrast-50 saturate-50 bg-opacity-15"
             id="image-main"
           >
+            <Image
+              src={image.url || placeholderUrl}
+              fill
+              style={{ objectFit: "cover" }}
+              quality={70}
+              alt="Main Background Image"
+              loading="lazy"
+            />
             <div className="absolute inset-0 bg-gradient-to-t from-black via-gray-400 to-black opacity-85"></div>
           </div>
           <div className="w-full h-full flex items-center justify-center">
@@ -89,19 +82,26 @@ const Show = ({ image, images, text, heading }) => {
           </div>
         </div>
 
-        <div className="w-full min-h-screen grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+        <div className="w-full min-h-screen grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 gap-6">
           {images.map((item) => (
             <div
               key={item.id}
-              className="cursor-pointer h-40 xl:h-full w-full hover:scale-105 transition-all duration-300 photos-shadow photo-container"
+              className="photo-container cursor-pointer sm:h-[40dvh] h-[20dvh] w-full relative"
+              onClick={() => handleImageClick(item)}
               style={{
-                backgroundImage: `url(${item.image.url || placeholderUrl})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
                 filter: "brightness(0.9) contrast(1.1) sepia(0.1)",
               }}
-              onClick={() => handleImageClick(item)}
-            ></div>
+            >
+              <Image
+                src={item.image.url || placeholderUrl}
+                fill
+                style={{ objectFit: "cover" }}
+                quality={70}
+                alt="Gallery Image"
+                loading="lazy"
+                className="hover:scale-105 transition-transform duration-300 photos-shadow"
+              />
+            </div>
           ))}
         </div>
       </div>
@@ -114,9 +114,12 @@ const Show = ({ image, images, text, heading }) => {
             backdropFilter: "blur(5px)",
           }}
         >
-          <img
+          <Image
             src={activeImage.url || placeholderUrl}
-            alt="Fullscreen"
+            width={800}
+            height={600}
+            quality={80}
+            alt="Fullscreen Image"
             className="max-w-[100dvw] max-h-[100dvh]"
             style={{ filter: "brightness(0.9) contrast(1.1) sepia(0.1)" }}
           />
@@ -130,6 +133,6 @@ const Show = ({ image, images, text, heading }) => {
       )}
     </div>
   );
-};
+});
 
 export default Show;
