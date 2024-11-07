@@ -21,7 +21,6 @@ const Page = ({ page }) => {
           ogrodzenie lebork, brama lebork, balustrada lebork,
           ogrodzenie pomorze, brama pomorze, balustrada pomorze,
           ogrodzenie lebork, brama lebork, balustrada lebork,
-          
           "
         />
         <meta name="description" content={page.metaDescription} />
@@ -33,7 +32,18 @@ const Page = ({ page }) => {
           content={page.url || "https://www.wojplot.pl"}
         />
         <meta property="og:type" content="website" />
-
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/favicon-16x16.png"
+        />
         <meta name="author" content="Woj-Płot" />
         <meta name="robots" content="index, follow" />
         <link rel="icon" href="/logo.png" />
