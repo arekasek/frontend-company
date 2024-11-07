@@ -11,6 +11,19 @@ const Page = ({ page }) => {
     <>
       <Head>
         <title>{page.metaTitle || "Woj-Płot | Usługi ślusarskie"}</title>
+        <meta
+          name="keywords"
+          content="usługi ślusarskie, 
+          bramy, ogrodzenia, balustrady, 
+          kowalstwo, Lębork, Pomorze, lebork, 
+          wojplot, Woj-Płot, woj-płot. usługi ślusarskie 
+          lębork opinie, Lebork, 
+          ogrodzenie lebork, brama lebork, balustrada lebork,
+          ogrodzenie pomorze, brama pomorze, balustrada pomorze,
+          ogrodzenie lebork, brama lebork, balustrada lebork,
+          
+          "
+        />
         <meta name="description" content={page.metaDescription} />
         <meta property="og:title" content={page.metaTitle} />
         <meta property="og:description" content={page.metaDescription} />
