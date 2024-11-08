@@ -5,6 +5,7 @@ import Image from "next/image";
 const Show = React.memo(({ image, images, text, heading }) => {
   const [activeImage, setActiveImage] = useState(image);
   const [isFullScreen, setIsFullScreen] = useState(false);
+  const [isImageLoading, setIsImageLoading] = useState(false);
   const placeholderUrl = "https://via.placeholder.com/600x400?text=No+Image";
 
   const handleLazyLoad = useCallback((entries, observer) => {
@@ -35,6 +36,7 @@ const Show = React.memo(({ image, images, text, heading }) => {
   const handleImageClick = (item) => {
     setActiveImage(item.image);
     setIsFullScreen(true);
+    setIsImageLoading(true);
   };
 
   const handleCloseFullScreen = () => {
@@ -114,14 +116,21 @@ const Show = React.memo(({ image, images, text, heading }) => {
             backdropFilter: "blur(5px)",
           }}
         >
+          {isImageLoading && (
+            <div className="absolute inset-0 flex items-center justify-center z-40">
+              <div className="w-12 h-12 border-4 border-white border-t-transparent rounded-full animate-spin"></div>
+            </div>
+          )}
+
           <Image
             src={activeImage.url || placeholderUrl}
             width={800}
             height={600}
             quality={80}
             alt="Fullscreen Image"
-            className="max-w-[100dvw] max-h-[100dvh]"
+            className="max-w-full max-h-full object-contain"
             style={{ filter: "brightness(0.9) contrast(1.1) sepia(0.1)" }}
+            onLoadingComplete={() => setIsImageLoading(false)}
           />
           <button
             className="absolute top-4 right-4 text-white text-3xl"

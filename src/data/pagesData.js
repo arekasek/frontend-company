@@ -95,7 +95,7 @@ export const pagesData = {
       },
       {
         blockType: "Gallery",
-        heading: "Nasze Realizacje",
+        heading: "Nasze Ostatnie Realizacje",
         text: "Zobacz nasze najnowsze projekty.",
         image: {
           url: "/media/realizacje-główna.avif",
@@ -195,8 +195,9 @@ export const pagesData = {
   },
   bramy: {
     slug: "bramy",
-    metaTitle: "Woj-Płot | Bramy",
-    metaDescription: "Oferujemy szeroką gamę balustrad...",
+    metaTitle: "Woj-Płot | Bramy Artystyczne Lębork",
+    metaDescription:
+      "Oferujemy szeroką gamę balustrad łączące tradycyjne rzemiosło z nowoczesnym designem, oferując zarówno estetykę, jak i bezpieczeństwo.",
     metaImage: "/media/balustrada-tło.avif",
     layout: [
       {
@@ -444,10 +445,6 @@ export const pagesData = {
             id: 15,
             image: { url: "/media/furtki/15.avif", alt: "furtka 15" },
           },
-          {
-            id: 16,
-            image: { url: "/media/furtki/16.avif", alt: "furtka 16" },
-          },
         ],
       },
     ],
@@ -464,7 +461,7 @@ export const pagesData = {
         heading: "Konstrukcje",
         text: "Nasze konstrukcje metalowe, takie jak wiaty, przęsła i inne elementy, wykonujemy z najwyższą starannością, dbając o solidność, trwałość oraz estetykę. Realizujemy zarówno nowoczesne, minimalistyczne projekty, jak i bardziej tradycyjne rozwiązania, dostosowane do specyficznych potrzeb klienta. Każda konstrukcja jest projektowana z myślą o jej wytrzymałości i funkcjonalności, co sprawia, że doskonale sprawdza się w różnych warunkach atmosferycznych. Oferujemy szeroki wybór stylów, wykończeń oraz rozmiarów, by spełnić wymagania nawet najbardziej wymagających klientów. Zapewniamy również profesjonalny montaż, który gwarantuje stabilność i długowieczność naszych konstrukcji na lata.",
         image: {
-          url: "/media/konstrukcja-tło.avif",
+          url: "/media/konstrukcje-tło.avif",
           alt: "konstrukcje Background",
         },
         images: [
@@ -531,6 +528,14 @@ export const pagesData = {
           {
             id: 16,
             image: { url: "/media/konstrukcje/16.avif", alt: "konstrukcja 16" },
+          },
+          {
+            id: 17,
+            image: { url: "/media/konstrukcje/17.avif", alt: "konstrukcja 17" },
+          },
+          {
+            id: 18,
+            image: { url: "/media/konstrukcje/18.avif", alt: "konstrukcja 18" },
           },
         ],
       },
@@ -611,10 +616,6 @@ export const pagesData = {
           {
             id: 15,
             image: { url: "/media/meble/15.avif", alt: "mebel 15" },
-          },
-          {
-            id: 16,
-            image: { url: "/media/meble/16.avif", alt: "mebel 16" },
           },
         ],
       },
