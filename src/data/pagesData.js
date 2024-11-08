@@ -9,7 +9,7 @@ export const pagesData = {
       {
         blockType: "TwoColumn",
         heading: "Firma Woj-Płot istnieje na rynku od 2000r.",
-        text: "Oferujemy szeroki zakres usług w zakresie metaloplastyki, w tym bramy, ogrodzenia, balustrady, kraty, meble kute, a także różnego rodzaju konstrukcje metalowe.",
+        text: "Oferujemy szeroki zakres usług w zakresie metaloplastyki, w tym bramy, ogrodzenia, balustrady, kraty, meble kute, a także różnego rodzaju konstrukcje metalowe na terenie Lęborka i okolic.",
         images: [
           {
             image: {
