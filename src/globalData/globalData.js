@@ -6,7 +6,7 @@ const globalData = {
         {
           label:
             "PRZEDSIĘBIORSTWO PRODUKCYJNO HANDLOWO USŁUGOWE WOJ-PŁOT WOJCIECH ASMUS",
-          link: "./",
+          link: "https://wojplot.pl/",
           id: "67213862f7b7068c48f8c9bb",
         },
       ],
@@ -17,27 +17,27 @@ const globalData = {
     navLinks: [
       {
         label: "Strona główna",
-        link: "./",
+        link: "https://wojplot.pl/",
         id: "672129a6f7b7068c48f8c9b9",
       },
       {
         label: "Oferta",
-        link: "./#OFERTA",
+        link: "https://wojplot.pl/#OFERTA",
         id: "66fd5dc7687759b36f32d415",
       },
       {
         label: "Realizacje",
-        link: "./#Realizacje",
+        link: "https://wojplot.pl/#Realizacje",
         id: "66fd5dd2687759b36f32d416",
       },
       {
         label: "O firmie",
-        link: "./#text-firma-cont",
+        link: "https://wojplot.pl/#text-firma-cont",
         id: "66fd5ddb687759b36f32d417",
       },
       {
         label: "Kontakt",
-        link: "#Kontakt",
+        link: "https://wojplot.pl/#Kontakt",
         id: "66fd5de3687759b36f32d418",
       },
     ],

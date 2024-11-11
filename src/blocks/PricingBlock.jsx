@@ -61,7 +61,10 @@ const PricingBlock = ({ pricingItems }) => {
             key={index}
             className="relative hover:cursor-pointer group pricing-item flex flex-col h-full"
           >
-            <a href={item.pageLink.slug} className="h-full flex flex-col">
+            <a
+              href={`https://wojplot.pl/${item.pageLink.slug}`}
+              className="h-full flex flex-col"
+            >
               <div className="relative w-full sm:h-full h-[25vh] overflow-hidden group-hover:scale-105 transition-all duration-500 ease-in-out shadow-main-categories">
                 <Image
                   src={item.image.url}
