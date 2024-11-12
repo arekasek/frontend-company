@@ -5,22 +5,20 @@ import Link from "next/link";
 export default function Footer({ icon }) {
   return (
     <div className="w-full bg-[#292929]">
-      <div className="flex-wrap flex flex-row gap-4 z-10 p-4 justify-between md:justify-evenly items-center top-0 text-left Absans-Regular">
+      <div className="flex-wrap flex flex-col gap-4 z-10 p-4 top-0 text-left Absans-Regular">
         {globalData.bottomNavLinks.map((categoryItem, categoryIndex) => (
           <div key={categoryIndex}>
-            <div className="font-bold text-[#6d6d6d] text-sm md:text-sm">
+            <div className="font-bold text-[#6d6d6d] text-sm md:text-sm flex flex-col sm:flex-row gap-4 items-center justify-center">
               {categoryItem.category}
-            </div>
-            {categoryItem.links.map((linkItem, linkIndex) => (
-              <div key={linkIndex}>
-                <Link
-                  className="text-[#6d6d6d] text-xs hover:underline text-left"
-                  href={linkItem.link}
+              {categoryItem.links.map((linkItem, linkIndex) => (
+                <span
+                  key={linkIndex}
+                  className="text-[#6d6d6d] text-xs hover:underline text-left flex"
                 >
                   {linkItem.label}
-                </Link>
-              </div>
-            ))}
+                </span>
+              ))}
+            </div>
           </div>
         ))}
       </div>
