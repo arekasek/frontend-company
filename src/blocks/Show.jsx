@@ -74,11 +74,6 @@ const Show = React.memo(({ image, images, text, heading }) => {
                 <p className="text-justify text-sm 2xl:text-lg lg:text-base">
                   {text}
                 </p>
-                <div className="w-full flex items-center justify-center -z-10">
-                  <button className="bg-[#292929] hover:bg-black hover:w-[80%] transition-all duration-500 w-[100%] p-3 -z-10">
-                    Sprawdź termin
-                  </button>
-                </div>
               </div>
             </div>
           </div>
