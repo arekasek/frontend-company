@@ -1,0 +1,14 @@
+{
+  "redirects": [
+    {
+      "source": "http://wojplot.pl/:path*",
+      "destination": "https://wojplot.pl/:path*",
+      "permanent": true
+    },
+    {
+      "source": "https://www.wojplot.pl/:path*",
+      "destination": "https://wojplot.pl/:path*",
+      "permanent": true
+    }
+  ]
+}

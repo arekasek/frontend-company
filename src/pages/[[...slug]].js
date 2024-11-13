@@ -23,7 +23,10 @@ const Page = ({ page }) => {
           ogrodzenie lebork, brama lebork, balustrada lebork,
           "
         />
-        <meta name="google-site-verification" content="59_xWaApGEsHErFp3Q9rNY9QzzWBrTBLr-NKfWGSyIc" />
+        <meta
+          name="google-site-verification"
+          content="59_xWaApGEsHErFp3Q9rNY9QzzWBrTBLr-NKfWGSyIc"
+        />
         <meta name="description" content={page.metaDescription} />
         <meta property="og:title" content={page.metaTitle} />
         <meta property="og:description" content={page.metaDescription} />
