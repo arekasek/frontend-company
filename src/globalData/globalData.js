@@ -16,11 +16,6 @@ const globalData = {
   header: {
     navLinks: [
       {
-        label: "Strona główna",
-        link: "https://wojplot.pl/",
-        id: "672129a6f7b7068c48f8c9b9",
-      },
-      {
         label: "Oferta",
         link: "https://wojplot.pl/#OFERTA",
         id: "66fd5dc7687759b36f32d415",
