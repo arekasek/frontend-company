@@ -1,11 +1,9 @@
-# robots.txt for Woj-Płot
-
-# Allow all crawlers access to everything except specified directories
+# *
 User-agent: *
-Disallow: /admin/
-Disallow: /private/
-Disallow: /login/
-Disallow: /checkout/
+Allow: /
 
-# Sitemap file location
-Sitemap: https://www.wojplot.pl/sitemap.xml
+# Host
+Host: https://wojplot.pl
+
+# Sitemaps
+Sitemap: https://wojplot.pl/sitemap.xml
