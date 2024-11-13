@@ -17,22 +17,22 @@ const globalData = {
     navLinks: [
       {
         label: "Oferta",
-        link: "https://wojplot.pl/#OFERTA",
+        link: "/#OFERTA",
         id: "66fd5dc7687759b36f32d415",
       },
       {
         label: "Realizacje",
-        link: "https://wojplot.pl/#Realizacje",
+        link: "/#Realizacje",
         id: "66fd5dd2687759b36f32d416",
       },
       {
         label: "O firmie",
-        link: "https://wojplot.pl/#text-firma-cont",
+        link: "/#text-firma-cont",
         id: "66fd5ddb687759b36f32d417",
       },
       {
         label: "Kontakt",
-        link: "https://wojplot.pl/#Kontakt",
+        link: "/#Kontakt",
         id: "66fd5de3687759b36f32d418",
       },
     ],
