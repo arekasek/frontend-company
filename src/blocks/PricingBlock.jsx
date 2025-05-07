@@ -61,10 +61,7 @@ const PricingBlock = ({ pricingItems }) => {
             key={index}
             className="relative hover:cursor-pointer group pricing-item flex flex-col h-full"
           >
-            <a
-              href={`https://wojplot.pl/${item.pageLink.slug}`}
-              className="h-full flex flex-col"
-            >
+            <a href={`${item.pageLink.slug}`} className="h-full flex flex-col">
               <div className="relative w-full sm:h-full h-[25vh] overflow-hidden group-hover:scale-105 transition-all duration-500 ease-in-out shadow-main-categories">
                 <Image
                   src={item.image.url}
@@ -73,6 +70,8 @@ const PricingBlock = ({ pricingItems }) => {
                   objectFit="cover"
                   objectPosition="center"
                   quality={75}
+                  placeholder="blur"
+                  blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==" // Podstawowy placeholder
                   className="shadow-main-categories w-full sm:h-full h-[25vh] bg-center z-0 filter brightness-50 contrast-50 saturate-50 group-hover:scale-105 group-hover:brightness-50 group-hover:contrast-100 group-hover:saturate-100 transition-all duration-500 ease-in-out"
                 />
               </div>

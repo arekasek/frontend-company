@@ -58,6 +58,9 @@ const Gallery = ({
     );
   }, []);
 
+  const placeholderImage =
+    "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==";
+
   return (
     <div
       className="min-h-[100dvh] w-full bg-gray-200 flex items-center justify-center p-8 sm:p-16 gallery-container"
@@ -70,9 +73,10 @@ const Gallery = ({
               <Image
                 src={image.url}
                 alt="Main Image"
-                layout="fill"
-                objectFit="cover"
+                fill
                 quality={75}
+                placeholder="blur"
+                blurDataURL={placeholderImage}
                 className="z-0"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black opacity-80"></div>
@@ -101,6 +105,8 @@ const Gallery = ({
                 layout="fill"
                 objectFit="cover"
                 quality={75}
+                placeholder="blur"
+                blurDataURL={item.image.blurDataURL || placeholderImage}
                 className="z-0"
               />
               {activeIndex === index && (
@@ -118,6 +124,8 @@ const Gallery = ({
               layout="fill"
               objectFit="cover"
               quality={75}
+              placeholder="blur"
+              blurDataURL={image.blurDataURL || placeholderImage}
               className="z-0"
             />
             <h1>{heading}</h1>
