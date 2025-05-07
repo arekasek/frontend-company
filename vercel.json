@@ -1,9 +1,0 @@
-{
-  "redirects": [
-    {
-      "source": "http://wojplot.pl",
-      "destination": "https://wojplot.pl",
-      "permanent": true
-    }
-  ]
-}
