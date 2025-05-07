@@ -31,10 +31,7 @@ const Page = ({ page }) => {
         <meta property="og:title" content={page.metaTitle} />
         <meta property="og:description" content={page.metaDescription} />
         <meta property="og:image" content={page.metaImage} />
-        <meta
-          property="og:url"
-          content={page.url || "https://www.wojplot.pl"}
-        />
+        <meta property="og:url" content={page.url} />
         <meta property="og:type" content="website" />
         <link
           rel="icon"
@@ -52,7 +49,7 @@ const Page = ({ page }) => {
         <meta name="robots" content="index, follow" />
         <link rel="icon" href="/logo.png" />
         <link rel="apple-touch-icon" href="/logo.png" />
-        <link rel="canonical" href={page.url || "https://www.wojplot.pl"} />
+        <link rel="canonical" href="https://wojplot.pl" />
         <meta name="apple-mobile-web-app-title" content="Woj-Płot" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />

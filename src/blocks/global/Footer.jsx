@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function Footer({ icon }) {
   return (
-    <div className="w-full bg-[#292929]">
+    <div className="w-full bg-[#4b4b4b]">
       <div className="flex-wrap flex flex-col gap-4 z-10 p-4 top-0 text-left Absans-Regular">
         {globalData.bottomNavLinks.map((categoryItem, categoryIndex) => (
           <div key={categoryIndex}>
